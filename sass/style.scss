@@ -1,0 +1,138 @@
+html {
+  font-size: 62.5%;
+}
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+$orange: hsl(25, 97%, 53%);
+$white: hsl(0, 0%, 100%);
+$light-grey: hsl(217, 12%, 63%);
+$medium-grey: hsl(216, 12%, 54%);
+$dark-blue: hsl(213, 19%, 18%);
+$very-dark-blue: hsl(216, 12%, 8%);
+
+$regular: 400;
+$bold: 700;
+
+body {
+  background-color: $very-dark-blue;
+  font-family: 'Overpass', sans-serif;
+}
+
+#hidden {
+  display: none;
+}
+
+main {
+  width: Min(50em, 90%);
+  background: $dark-blue;
+  margin: 15em auto;
+  padding: 2.4em;
+  border-radius: 15px;
+
+  h1 {
+    color: $white;
+    font-size: 3rem;
+  }
+
+  p {
+    color: $light-grey;
+    font-size: 1.5rem;
+  }
+}
+
+.rating-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+
+  img {
+    width: Min(4em, 30%);
+    background-color: lighten($dark-blue, 5);
+    border-radius: 100%;
+    padding: .8em;
+  }
+
+  ol {
+    list-style: none;
+    margin: 1.5em 0;
+    display: flex;
+    flex-wrap: nowrap;  
+    align-items: center;
+    justify-content: space-between;
+    gap: 1em;
+
+    .selected {
+        background-color: $orange;
+        color: $white;
+      }
+
+    li {
+      border-radius: 100%;
+      padding: .85em 1.4em;
+      background-color: lighten($dark-blue, 5);
+      color: $medium-grey;
+      font-size: 1.5rem;
+      transition: all 0.2s ease-in-out;
+
+      &:hover {
+        background-color: $orange;
+        color: $white;
+        cursor: pointer;
+      }  
+    }
+  }
+
+  button {
+    padding: .6em;
+    border-radius: 30px;
+    border: none;
+    background-color: $orange;
+    color: $white;
+    font-family: inherit;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.2s ease-in-out;
+
+      &:hover {
+        background-color: $white;
+        color: $orange;
+        cursor: pointer;
+      }
+  }
+}
+
+.thanks-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2em;
+  text-align: center;
+  
+  .rating-display {
+    margin-bottom: 1em;
+    img {
+      width: Min(30em, 100%);
+    }
+
+    p {
+      margin-top: 1em;
+      color: $orange;
+      background-color: lighten($dark-blue, 5);
+      border-radius: 50px;
+      padding: .4em 2em;
+    }
+  }
+
+  p {
+    line-height: 25px;
+  }
+}
